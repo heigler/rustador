@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block page_header %}Login{% endblock page_header %}
+
+{% block content %}
+<form method="post" action=".">
+  {% if error %}
+  <span class="alert-box error">{{ error }}</span>
+  {% endif %}
+  <input type="text" name="username" placeholder="Seu nome" />
+  <input type="password" name="password" placeholder="Sua senha" />
+
+  <button type="submit" class="right">Entrar</button>
+</form>
+{% endblock content %}
