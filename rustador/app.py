@@ -5,6 +5,8 @@ from __future__ import absolute_import
 
 from flask import Flask, render_template, request, session, url_for, redirect
 
+from rust_api import rust
+
 app = Flask(__name__)
 
 
@@ -38,9 +40,13 @@ def dashboard():
     if 'logged_user' not in session:
         return redirect(url_for('home'))
 
+    command = request.args.get('command')
+    if command:
+        rust(command, session['logged_user']['name'])
+
     return render_template('dashboard.html')
 
 
 if __name__ == '__main__':
     app.secret_key = '4\xc4 \xd7\xb9\x0c>\x03-\x9e\xf1F91\xe04iib\x8a'
-    app.run(host='0.0.0.0', debug=True)
+    app.run(host='0.0.0.0', debug=True, port=5050)
