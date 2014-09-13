@@ -13,6 +13,7 @@ app = Flask(__name__)
 MODERATORS = {
     'rafael': {'name': 'Rafael Rocha', 'password': '2504rask'},
     'heigler': {'name': 'Heigler Rocha', 'password': '4532deb'},
+    'renan': {'name': 'Renan Ren', 'password': '66uil'},
     'gabriel': {'name': 'Gabriel Gabi', 'password': '2534tok'},
 }
 

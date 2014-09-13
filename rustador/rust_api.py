@@ -7,7 +7,8 @@ from rcon import RCON, NoResponseError
 SERVER_ADDR = ('54.207.65.230', 28016)
 SERVER_PASSWD = '3840'
 COMMANDS = {'airdrop.drop': 'chamou o aviaozinho',
-            'kick': 'chutou {0}'}
+            'kick': 'chutou {0}',
+            'ban': 'baniu pra sempre {0}'}
 
 
 def rust(command, user, target_name=''):
