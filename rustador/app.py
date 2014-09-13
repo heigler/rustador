@@ -42,7 +42,8 @@ def dashboard():
 
     command = request.args.get('command')
     if command:
-        rust(command, session['logged_user']['name'])
+        arg1 = request.args.get('arg1')
+        rust(command, session['logged_user']['name'], arg1)
 
     return render_template('dashboard.html')
 

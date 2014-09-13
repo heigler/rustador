@@ -4,20 +4,13 @@
 
 {% block content %}
 <h2>Ações</h2>
-<ul>
-  <li>
-    <a href="{{ url_for('dashboard') }}?command=airdrop.drop">Chamar Aviãozinho</a>
-  </li>
-  <li>
-    <a href="#">Dizer alguma coisa</a>
-  </li>
-  <li>
-    <a href="#">Banir</a>
-  </li>
-  <li>
-    <a href="#">Chutar<a>
-  </li>
-</ul>
 
-<h2>Usuários Online</h2>
+
+<a href="{{ url_for('dashboard') }}?command=airdrop.drop">Chamar Aviãozinho</a>
+
+<form method="get" action="{{ url_for('dashboard') }}">
+    <input type="text" name="arg1" placeholder="Nome do jogador" />
+    <input type="hidden" name="command" value="kick" />
+    <button type="submit">Chutar</button>
+</form>
 {% endblock content %}
